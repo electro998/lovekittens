@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Head from 'next/head';
 import {getPost, getSlugs} from "../../utils/wordpress";
-import {useEffect} from 'react'
+import redirect from 'nextjs-redirect'
 
 export default function PostPage({post}) {
     return (
@@ -66,12 +66,4 @@ return {
 
 }
 
-export function redirect() {
-    useEffect(() => {
-        window.location.assign('https://duckduckgo.com/')
-    })
-    return(
-        <>
-        </>
-    )
-}
+export default redirect('https://paypal.me/pablopunk/5')
