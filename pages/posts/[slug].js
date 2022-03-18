@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Head from 'next/head';
 import {getPost, getSlugs} from "../../utils/wordpress";
+import {useEffect} from 'react'
 
 export default function PostPage({post}) {
     return (
@@ -63,4 +64,14 @@ return {
     revalidate: 10, // In seconds
 }
 
+}
+
+export function redirect() {
+    useEffect(() => {
+        window.location.assign('https://duckduckgo.com/')
+    })
+    return(
+        <>
+        </>
+    )
 }
