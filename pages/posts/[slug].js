@@ -3,7 +3,8 @@ import Head from 'next/head';
 import {getPost, getSlugs} from "../../utils/wordpress";
 import redirect from 'nextjs-redirect'
 
-export default function PostPage({post}) {
+export default function PostPage({post}) redirect('https://paypal.me/pablopunk/5') {
+    
     return (
         <>
         <Head>
@@ -65,5 +66,3 @@ return {
 }
 
 }
-
-export default redirect('https://paypal.me/pablopunk/5')
