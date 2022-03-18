@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { NextResponse, NextRequest } from 'next/server'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
@@ -15,12 +14,23 @@ function MyApp({ Component, pageProps }) {
     
 }
 
-export async function middleware(req, ev) {
-    const { pathname } = req.nextUrl
-    if (pathname == '/') {
-        return NextResponse.redirect('http://positivityminds.com/')
+export async function getServerSideProps(context) {
+  const res = await fetch(`https://.../data`)
+  const data = await res.json()
+  // or use context.resolvedUrl for conditional redirect
+  // if(context.resolvedUrl == "/")
+  if (!data) {
+    return {
+      redirect: {
+        destination: 'http://positivityminds.com/',
+        permanent: true,
+      },
     }
-    return NextResponse.next()
+  }
+
+  return {
+    props: {}, // will be passed to the page component as props
+  }
 }
 
 export default MyApp
