@@ -11,7 +11,7 @@ export default function PostPage({post}) {
 <meta property="og:title" content={post.title.rendered} />
 <meta property="og:url" content="" />
 <meta property="og:site_name" content="" />
-<meta name="description" content={post.title.rendered} />
+<meta property="og:description" content={post.title.rendered} />
 <meta property="og:image" content={post.yoast_head_json.twitter_image}  />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
