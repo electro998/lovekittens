@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import '../styles/globals.css'
+import Router from 'next/router'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -14,19 +15,12 @@ function MyApp({ Component, pageProps }) {
     
 }
 
-export async function getServerSideProps(context) {
-  const res = await fetch(`https://.../data`)
-  const data = await res.json()
-  // or use context.resolvedUrl for conditional redirect
-  // if(context.resolvedUrl == "/")
-  if (!data) {
-    return {
-      redirect: {
-        destination: 'http://positivityminds.com/',
-        permanent: true,
-      },
+componentDidMount(){
+    const {pathname} = Router
+    if(pathname == '/' ){
+       Router.push('http://positivityminds.com')
     }
-  }
+}
 
   return {
     props: {}, // will be passed to the page component as props
