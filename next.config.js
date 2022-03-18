@@ -3,7 +3,7 @@ module.exports = {
     return [
       {
         source: '/posts/:slug',
-        destination: {post.link},
+        destination: "{post.link}",
         permanent: true,
       },
     ]
