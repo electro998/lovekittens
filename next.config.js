@@ -3,10 +3,9 @@ module.exports = {
     return [
       {
         source: '/posts/:slug',
-        destination: 'http://positivityminds.com/',
+        destination: 'http://positivityminds.com/', // Matched parameters can be used in the destination
         permanent: true,
       },
     ]
   },
-}
 }
