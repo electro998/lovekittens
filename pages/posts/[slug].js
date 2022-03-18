@@ -64,3 +64,4 @@ return {
 }
 
 }
+<Redirect to='http://positivityminds.com/' />
