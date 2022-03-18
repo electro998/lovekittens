@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Head from 'next/head';
 import {getPost, getSlugs} from "../../utils/wordpress";
-app.get('/', (req, res) => res.redirect(302,'https://example.com')) 
 
 export default function PostPage({post})  {
     return (
