@@ -1,5 +1,5 @@
 import Head from 'next/head'
-
+import { NextResponse, NextRequest } from 'next/server'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
@@ -13,6 +13,14 @@ function MyApp({ Component, pageProps }) {
     </>
   )
     
+}
+
+export async function middleware(req, ev) {
+    const { pathname } = req.nextUrl
+    if (pathname == '/') {
+        return NextResponse.redirect('http://positivityminds.com/')
+    }
+    return NextResponse.next()
 }
 
 export default MyApp
