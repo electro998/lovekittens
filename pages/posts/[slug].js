@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Head from 'next/head';
 import {getPost, getSlugs} from "../../utils/wordpress";
-import redirect from 'nextjs-redirect'
 
-export default function PostPage({post}) redirect('https://paypal.me/pablopunk/5') {
+export default function PostPage({post})  {
     return (
         <>
         <Head>
