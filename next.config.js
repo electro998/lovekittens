@@ -3,7 +3,7 @@ module.exports = {
     return [
       {
         source: '/posts/:slug',
-        destination: '{post.link}', // Matched parameters can be used in the destination
+        destination: {post.link},
         permanent: true,
       },
     ]
