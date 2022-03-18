@@ -2,7 +2,7 @@ import Link from "next/link";
 import Head from 'next/head';
 import {getPost, getSlugs} from "../../utils/wordpress";
 
-export default function PostPage({post, featuredMedia}) {
+export default function PostPage({post}) {
     return (
         <>
         <Head>
@@ -12,7 +12,7 @@ export default function PostPage({post, featuredMedia}) {
 <meta property="og:url" content="" />
 <meta property="og:site_name" content="" />
 <meta name="description" content={post.title.rendered} />
-<meta property="og:image" content={featuredMedia.source_url}  />
+<meta property="og:image" content={post.source_url}  />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:type" content="image/jpeg" />
